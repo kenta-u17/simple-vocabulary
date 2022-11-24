@@ -70,7 +70,7 @@ class _WordListScreenState extends State<WordListScreen> {
           child: ListView.builder(
             itemCount: wordList.length,
             scrollDirection: Axis.vertical,
-            itemBuilder: (context, index) {
+            itemBuilder: (BuildContext context, int index) {
               return Dismissible(
                 direction: DismissDirection.endToStart,
                 key: Key(wordList.toString()),
@@ -78,9 +78,7 @@ class _WordListScreenState extends State<WordListScreen> {
                   setState(() {
                     wordList.removeAt(index + 1);
                   });
-                  if (direction == DismissDirection.endToStart) {
-                    _deleteWord(wordList[index]);
-                  }
+                  _deleteWord(wordList[index]);
                 },
                 // スワイプ方向がendToStart（画面左から右）の場合のバックグラウンドの設定
                 background: Padding(
@@ -98,9 +96,6 @@ class _WordListScreenState extends State<WordListScreen> {
                     color: Colors.red,
                   ),
                 ),
-
-                // スワイプ方向がstartToEnd（画面右から左）の場合のバックグラウンドの設定
-
 
                 child: Column(
                   children: [
@@ -143,7 +138,7 @@ class _WordListScreenState extends State<WordListScreen> {
     setState(() {});
   }
 
-  Widget _wordItem(index) {
+  Widget _wordItem(int index) {
     return Card(
       elevation: 5.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13.0)),
@@ -172,6 +167,7 @@ class _WordListScreenState extends State<WordListScreen> {
               )
             : null,
         onTap: () => _editWord(wordList[index]),
+        onLongPress: () => _deleteWord(wordList[index]),
       ),
     );
   }
