@@ -45,6 +45,7 @@ dependencies:
 
   fluttertoast: ^8.0.9
   google_mobile_ads: ^2.2.0
+  flutter_tts: ^3.6.2
 
 
 dev_dependencies:

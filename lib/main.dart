@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
                 ?darkTheme()
                 :lightTheme(),
             home: HomeScreen(),
+            debugShowCheckedModeBanner: false,
           );
         }
       ),

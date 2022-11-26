@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:my_own_frashcards/db/database.dart';
 import 'package:my_own_frashcards/main.dart';
 
@@ -265,21 +266,30 @@ class _TestScreenState extends State<TestScreen> {
         child: InkWell(
           onTap: () => _finishTestScreen(),
           child: Container(
-            color: Colors.white,
-            width: 300.0,
-            child: Text(
-              "テスト終了",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 55.0,
-                shadows: <Shadow>[
-                  Shadow(
-                    color: Colors.black,
-                    offset: Offset(4.0, 4.0),
-                    blurRadius: 3.0,
-                  ),
-                ],
+            decoration: BoxDecoration(
+              border: Border.all(
+                  color: Colors.black,
+                  width: 6,
+              ),
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "テスト終了",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 55.0,
+                  shadows: <Shadow>[
+                    Shadow(
+                      color: Colors.black,
+                      offset: Offset(3.5, 3.5),
+                      blurRadius: 3.0,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
