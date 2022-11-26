@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:my_own_frashcards/model_theme.dart';
 import 'package:my_own_frashcards/parts/button_with_icon.dart';
@@ -71,9 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SafeArea(
           child: Column(
             children: <Widget>[
+              SizedBox(
+                height: 10.0,
+              ),
               _titleText(),
               Expanded(
-                child: Image.asset("assets/images/tango2.png"),
+                child: Image.asset("assets/images/tango.png"),
               ),
               Divider(
                 height: 15.0,
@@ -139,6 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
             value: false,
             groupValue: isIncludeMemorizedWords,
             onChanged: (value) => _onRadioSelected(value),
+            activeColor: Colors.red,
             title: Text(
               "暗記済みの単語を除外する",
               style: TextStyle(fontSize: 17.0),
@@ -148,6 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
             value: true,
             groupValue: isIncludeMemorizedWords,
             onChanged: (value) => _onRadioSelected(value),
+            activeColor: Colors.red,
             title: Text(
               "暗記済みの単語含む",
               style: TextStyle(fontSize: 17.0),
@@ -173,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text(themeNotifier.isDark ? "Dark" : "Light"),
           value: themeNotifier.isDark,
           secondary:
-              Icon(themeNotifier.isDark ? Icons.wb_sunny : Icons.bedtime),
+              Icon(themeNotifier.isDark ? Icons.bedtime : Icons.wb_sunny),
           onChanged: (value) {
             themeNotifier.isDark = !themeNotifier.isDark;
           },
