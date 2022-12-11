@@ -115,7 +115,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_tts: 0f492aab6accf87059b72354fcb4ba934304771d
-  fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
+  fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
   Google-Mobile-Ads-SDK: 465532d33dfc878f2f9aca281fddbcd4bf9c0197
   google_mobile_ads: 6bfe04d9c9fd5c2a026e6f09ca2d97ae25b78f7e
   GoogleAppMeasurement: 3bc3a6484b7bb20dd8489242c4dd3c92a3e5107b
