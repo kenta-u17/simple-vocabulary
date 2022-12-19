@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // テスト用バナーID
     adUnitId: Platform.isAndroid
         ? 'ca-app-pub-3940256099942544/6300978111'
-        : 'ca-app-pub-3940256099942544/2934735716',
+        : 'ca-app-pub-6691011891914441/4231878805',
     size: AdSize.banner,
     request: AdRequest(),
     listener: BannerAdListener(
