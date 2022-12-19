@@ -12,29 +12,29 @@ class WordListScreen extends StatefulWidget {
 }
 
 class _WordListScreenState extends State<WordListScreen> {
-  // final BannerAd myBanner = BannerAd(
-  //   // テスト用バナーID
-  //   adUnitId: Platform.isAndroid
-  //       ? 'ca-app-pub-3940256099942544/6300978111'
-  //       : 'ca-app-pub-3940256099942544/2934735716',
-  //   size: AdSize.banner,
-  //   request: AdRequest(),
-  //   listener: BannerAdListener(
-  //     onAdLoaded: (Ad ad) => print('バナー広告がロードされました'),
-  //     // Called when an ad request failed.
-  //     onAdFailedToLoad: (Ad ad, LoadAdError error) {
-  //       // Dispose the ad here to free resources.
-  //       ad.dispose();
-  //       print('バナー広告の読み込みが次の理由で失敗しました: $error');
-  //     },
-  //     // Called when an ad opens an overlay that covers the screen.
-  //     onAdOpened: (Ad ad) => print('バナー広告が開かれました'),
-  //     // Called when an ad removes an overlay that covers the screen.
-  //     onAdClosed: (Ad ad) => print('バナー広告が閉じられました'),
-  //     // Called when an impression occurs on the ad.
-  //     onAdImpression: (Ad ad) => print('Ad impression.'),
-  //   ),
-  // );
+  final BannerAd myBanner = BannerAd(
+    // テスト用バナーID
+    adUnitId: Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/6300978111'
+        : 'ca-app-pub-3940256099942544/2934735716',
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(
+      onAdLoaded: (Ad ad) => print('バナー広告がロードされました'),
+      // Called when an ad request failed.
+      onAdFailedToLoad: (Ad ad, LoadAdError error) {
+        // Dispose the ad here to free resources.
+        ad.dispose();
+        print('バナー広告の読み込みが次の理由で失敗しました: $error');
+      },
+      // Called when an ad opens an overlay that covers the screen.
+      onAdOpened: (Ad ad) => print('バナー広告が開かれました'),
+      // Called when an ad removes an overlay that covers the screen.
+      onAdClosed: (Ad ad) => print('バナー広告が閉じられました'),
+      // Called when an impression occurs on the ad.
+      onAdImpression: (Ad ad) => print('Ad impression.'),
+    ),
+  );
   List<Word> wordList = [];
 
   @override
@@ -45,7 +45,7 @@ class _WordListScreenState extends State<WordListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // myBanner.load();
+    myBanner.load();
 
     return Scaffold(
         appBar: AppBar(
@@ -99,21 +99,21 @@ class _WordListScreenState extends State<WordListScreen> {
 
                 child: Column(
                   children: [
-                    // InkWell(
-                    //   child: index % 5 == 0
-                    //       ? index == 0
-                    //       ? const SizedBox()
-                    //       : Padding(
-                    //     padding: const EdgeInsets.all(5.0),
-                    //     child: Container(
-                    //       color: Colors.white,
-                    //       height: 230.0,
-                    //       width: double.infinity,
-                    //       child: AdWidget(ad: myBanner),
-                    //     ),
-                    //   )
-                    //       : const SizedBox(),
-                    // ),
+                    InkWell(
+                      child: index % 5 == 0
+                          ? index == 0
+                          ? const SizedBox()
+                          : Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          color: Colors.white,
+                          height: 230.0,
+                          width: double.infinity,
+                          child: AdWidget(ad: myBanner),
+                        ),
+                      )
+                          : const SizedBox(),
+                    ),
                     InkWell(child: _wordItem(index)),
                   ],
                 ),

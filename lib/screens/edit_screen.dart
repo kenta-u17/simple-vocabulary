@@ -20,29 +20,29 @@ class EditScreen extends StatefulWidget {
 }
 
 class _EditScreenState extends State<EditScreen> {
-  // final BannerAd myBanner = BannerAd(
-  //   // テスト用バナーID
-  //   adUnitId: Platform.isAndroid
-  //       ? 'ca-app-pub-3940256099942544/6300978111'
-  //       : 'ca-app-pub-3940256099942544/2934735716',
-  //   size: AdSize.banner,
-  //   request: AdRequest(),
-  //   listener: BannerAdListener(
-  //     onAdLoaded: (Ad ad) => print('バナー広告がロードされました'),
-  //     // Called when an ad request failed.
-  //     onAdFailedToLoad: (Ad ad, LoadAdError error) {
-  //       // Dispose the ad here to free resources.
-  //       ad.dispose();
-  //       print('バナー広告の読み込みが次の理由で失敗しました: $error');
-  //     },
-  //     // Called when an ad opens an overlay that covers the screen.
-  //     onAdOpened: (Ad ad) => print('バナー広告が開かれました'),
-  //     // Called when an ad removes an overlay that covers the screen.
-  //     onAdClosed: (Ad ad) => print('バナー広告が閉じられました'),
-  //     // Called when an impression occurs on the ad.
-  //     onAdImpression: (Ad ad) => print('Ad impression.'),
-  //   ),
-  // );
+  final BannerAd myBanner = BannerAd(
+    // テスト用バナーID
+    adUnitId: Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/6300978111'
+        : 'ca-app-pub-3940256099942544/2934735716',
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(
+      onAdLoaded: (Ad ad) => print('バナー広告がロードされました'),
+      // Called when an ad request failed.
+      onAdFailedToLoad: (Ad ad, LoadAdError error) {
+        // Dispose the ad here to free resources.
+        ad.dispose();
+        print('バナー広告の読み込みが次の理由で失敗しました: $error');
+      },
+      // Called when an ad opens an overlay that covers the screen.
+      onAdOpened: (Ad ad) => print('バナー広告が開かれました'),
+      // Called when an ad removes an overlay that covers the screen.
+      onAdClosed: (Ad ad) => print('バナー広告が閉じられました'),
+      // Called when an impression occurs on the ad.
+      onAdImpression: (Ad ad) => print('Ad impression.'),
+    ),
+  );
 
   TextEditingController questionController = TextEditingController();
   TextEditingController answerController = TextEditingController();
@@ -76,7 +76,7 @@ class _EditScreenState extends State<EditScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // myBanner.load();
+    myBanner.load();
     return WillPopScope(
       onWillPop: () => _backToWordListScreen(),
       child: Scaffold(
@@ -111,18 +111,18 @@ class _EditScreenState extends State<EditScreen> {
                 height: 30.0,
               ),
               _answerInputpart(),
-              // Padding(
-              //   padding: const EdgeInsets.all(40.0),
-              //   child: Align(
-              //     alignment: Alignment.bottomCenter,
-              //     child: Container(
-              //       color: Colors.white,
-              //       height: 250.0,
-              //       width: double.infinity,
-              //       child: AdWidget(ad: myBanner),
-              //     ),
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    color: Colors.white,
+                    height: 250.0,
+                    width: double.infinity,
+                    child: AdWidget(ad: myBanner),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
