@@ -11,11 +11,10 @@
   <li>Google Ado</li>
 </ul>
 
-<h2>アーキテクチャ</h2>
-MVVC (Model-View-ViewController) パターンを採用し、コードの可読性とメンテナンス性を高め、アプリの拡張性と柔軟性を確保しています。
-Model
-View
-Controller
+<h2>設計</h2>
+<div align="center">
+  <img src="https://github.com/kenta-u17/simple-vocabulary/assets/87677449/19a414c9-6b06-47aa-b039-edb231222191" alt="simple_vocabulary" style="">
+</div>
 
 <h2>機能一覧</h2>
 <ul>
